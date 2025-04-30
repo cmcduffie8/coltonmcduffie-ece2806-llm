@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#python3 training_tokenizer.py --save_file '../scratch/model/model_clean_reduce_overfitting.pth' 
+
+python3 testing_tokenizer.py --ckpt '../scratch/model/model_clean_reduce_overfitting.pth' --testing_file_prompt './test_data/test_prompt_1.txt' --testing_file_answer './test_data/test_answer_1.txt' --testing_file_response './test_data/test_response_1.txt' --generate_token_number 100
+
+python3 testing_tokenizer.py --ckpt '../scratch/model/model_reduce_overfitting.pth' --testing_file_prompt './test_data/test_prompt_1.txt' --testing_file_answer './test_data/test_answer_1.txt' --testing_file_response './test_data/test_response_1.txt' --generate_token_number 100
+
+python3 testing_tokenizer.py --ckpt '../scratch/model/model_BPE_vocab_2000.pth' --testing_file_prompt './test_data/test_prompt_1.txt' --testing_file_answer './test_data/test_answer_1.txt' --testing_file_response './test_data/test_response_1.txt' --generate_token_number 100 --n_embd 384
